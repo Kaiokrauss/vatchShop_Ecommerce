@@ -9,6 +9,7 @@ const Coupon = require('../models/couponModel');
 const Wallet = require('../models/walletModel');
 const randomstring = require('randomstring');
 
+
 const { ObjectId } = require('mongoose').Types;
 
 const bcrypt = require("bcryptjs");
@@ -18,10 +19,12 @@ const path = require("path")
 const Razorpay = require('razorpay')
 const crypto = require("crypto")
 
-const instance = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_KEY_SECRET
-});
+var instance = new Razorpay({
+ key_id: process.env.RAZORPAY_KEY_ID,
+ key_secret: process.env.RAZORPAY_KEY_SECRET,
+ });
+const instance = null; // Adicione isso para não quebrar o resto do código
+
 
 
 
